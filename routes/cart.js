@@ -8,7 +8,7 @@ const UserPoints = require('../models/Points');
 
 router.get('/shop',async(req,res)=>{
     const products = await Product.find({});
-    res.render('Pages/shop', { products });
+    res.render('Pages/Shop', { products });
 })
 
 // Route to add product to cart
