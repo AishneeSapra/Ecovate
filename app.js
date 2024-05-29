@@ -186,7 +186,7 @@ app.get('/points/:id', catchAsync(async (req, res) => {
 
 app.get('/activity/:id',catchAsync(async(req,res)=>{
     const activity=await Activity.findById(req.params.id);
-    res.render('Pages/activityshow',{activity});
+    res.render('Pages/activityShow',{activity});
 }));
 app.get('/',async(req,res)=>{
     res.render('Pages/home');
