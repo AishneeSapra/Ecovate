@@ -34,7 +34,7 @@ const methodOverride = require('method-override');
 //mongoose.connect('mongodb://127.0.0.1:27017/eco-vate') 
 //const dbUrl =  process.env.DB_URL ;
 
-const dbUrl =  'mongodb://127.0.0.1:27017/eco-vate' || process.env.DB_URL ;
+const dbUrl = process.env.DB_URL ;
 mongoose.connect(dbUrl);
  
 const db = mongoose.connection;
@@ -201,11 +201,11 @@ app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404))
 })
 
-app.use((err, req, res, next) => {
-    const { statusCode = 500 } = err;
-    if (!err.message) err.message = 'Oh No, Something Went Wrong!'
-    res.status(statusCode).render('error', { err })
-})
+// app.use((err, req, res, next) => {
+//     const { statusCode = 500 } = err;
+//     if (!err.message) err.message = 'Oh No, Something Went Wrong!'
+//     res.status(statusCode).render('error', { err })
+// })
 
 
 
