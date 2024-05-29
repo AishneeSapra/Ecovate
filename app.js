@@ -35,7 +35,7 @@ const MongoDBStore = require("connect-mongo")(session);
 //mongoose.connect('mongodb://127.0.0.1:27017/eco-vate') 
 //const dbUrl =  process.env.DB_URL ;
 
-const dbUrl =  'mongodb://127.0.0.1:27017/eco-vate' || process.env.DB_URL ;
+const dbUrl = process.env.DB_URL ;
 mongoose.connect(dbUrl);
 //mongoose.connect('mongodb+srv://second-user:JXwQA4Aa8wpBmXU6@cluster0.he5aacd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
  
