@@ -16,6 +16,8 @@ const cartRoutes=require('./routes/cart');
 const blogRoutes = require('./routes/blog');
 const ExpressError = require('./utils/Expresserror');
 const catchAsync = require('./utils/catchAsync');
+const ejsMate=require('ejs-mate');
+const methodOverride = require('method-override');
 
 const { isLoggedIn } = require('./middleware');
 
@@ -28,14 +30,14 @@ const flash=require('connect-flash');
 const MongoDBStore = require("connect-mongo")(session);
 
 
-const ejsMate=require('ejs-mate');
-const methodOverride = require('method-override');
+
 // Connect to MongoDB
 //mongoose.connect('mongodb://127.0.0.1:27017/eco-vate') 
 //const dbUrl =  process.env.DB_URL ;
 
 const dbUrl =  'mongodb://127.0.0.1:27017/eco-vate' || process.env.DB_URL ;
 mongoose.connect(dbUrl);
+//mongoose.connect('mongodb+srv://second-user:JXwQA4Aa8wpBmXU6@cluster0.he5aacd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
  
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
