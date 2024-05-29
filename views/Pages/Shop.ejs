@@ -1,0 +1,25 @@
+<% layout('layouts/boilerplate')%>
+<div class="container mt-5 text-center">
+    <h1 class="mb-4">PRODUCTS</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+        <% for (let product of products) { %>
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="<%= product.image %>" class="card-img-top" alt="<%= product.name %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= product.name %></h5>
+                        <p class="card-text"><%= product.description %></p>
+                        <p class="card-text"><strong>Points: <%= product.points %></strong></p>
+                        <form action="/shop" method="POST">
+                            <input type="hidden" name="productId" value="<%= product._id %>">
+                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+   
+   

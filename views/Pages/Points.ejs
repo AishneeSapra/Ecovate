@@ -1,0 +1,27 @@
+<% layout('layouts/boilerplate') %>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card text-center shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="card-body">
+                    <h1 class="display-4 text-primary font-weight-bold mb-4">Total Points</h1>
+                    <h2 class="text-success font-weight-bold"><%= totalPoints ? totalPoints : 0 %></h2>
+                    <div class="mt-4">
+                        <a href="/" class="btn btn-outline-primary btn-lg">Go Home</a>
+                        <a href="/shop" class="btn btn-outline-success btn-lg">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background: linear-gradient(to right, #76b852, #8DC26F);
+        font-family: 'Arial', sans-serif;
+    }
+    .card {
+        background: rgba(255, 255, 255, 0.8);
+    }
+</style>

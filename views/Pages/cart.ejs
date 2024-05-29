@@ -1,0 +1,28 @@
+<% layout('layouts/boilerplate')%>
+<h1 class="mb-4">Your Cart</h1>
+<div class="row">
+    <% if (cart && cart.items.length > 0) { %>
+        <% cart.items.forEach(item => { %>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="<%= item.productId.image %>" class="card-img-top" alt="<%= item.productId.name %>">
+                <div class="card-body">
+                    <h5 class="card-title"><%= item.productId.name %></h5>
+                    <p class="card-text">Points: <%= item.points %></p>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    <% } else { %>
+        <div class="col-12">
+            <p>Your cart is empty.</p>
+        </div>
+    <% } %>
+</div>
+<h3>Billing Points: <%= cart ? cart.totalPoints : 0 %></h3>
+
+<% if (cart && cart.items.length > 0) { %>
+    <form action="/checkout" method="POST" class="mt-4">
+        <button type="submit" class="btn btn-success">Checkout</button>
+    </form>
+<% } %>
