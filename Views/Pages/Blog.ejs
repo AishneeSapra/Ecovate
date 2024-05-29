@@ -1,0 +1,51 @@
+<% layout('layouts/boilerplate') %>
+ <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <h1 class="display-4 text-center text-primary font-weight-bold mb-5">Blogs</h1>
+                <% for(let blog of blogs) { %>
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-secondary">Title: <%= blog.title %></h5>
+                            <p class="card-text text-dark">Content: <%= blog.content %></p>
+                            <h6 class="card-subtitle text-muted">By <%= blog.author.username %></h6>
+                        </div>
+                    </div>
+                <% } %>
+                <div class="text-center">
+                    <a class="btn btn-success btn-lg mt-4" href="/blog/new">Post New Blog</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        body {
+            background: linear-gradient(to right, #76b852, #8DC26F);
+            font-family: 'Arial', sans-serif;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 15px;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .card-text {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .card-subtitle {
+            font-size: 0.9rem;
+        }
+        .btn-success {
+            background-color: #28a745;
+            border: none;
+        }
+        .btn-success:hover {
+            background-color: #218838;
+        }
+    </style>
+    
